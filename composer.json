@@ -14,12 +14,12 @@
     "seo",
     "php7"
   ],
-  "description": "Yii2 Component to connect to Firebase Database",
+  "description": "Yii2 Component to render some seo tags",
   "require": {
-    "yiisoft/yii2": "^2",
+    "yiisoft/yii2": "^2"
   },
   "require-dev": {
-    "yiisoft/yii2-faker":"*"
+    "yiisoft/yii2-faker": "*"
   },
   "minimum-stability": "dev",
   "autoload": {
