@@ -12,16 +12,30 @@ use yii\base\Component;
 
 class SeoTag extends Component
 {
+	public $metas = [];
 
-    private $twitter;
-    /** @var $facebook Facebook */
-    private $facebook;
-    private $site;
+	/** @var  $_twitter Twitter */
+    private $_twitter;
+    /** @var $_facebook Facebook */
+	private $_facebook;
+	/** @var $_site Site */
+	private $_site;
 
     public function init()
     {
         parent::init();
-        $this->facebook = new Facebook();
+        $this->_facebook = new Facebook();
+        if(isset($this->metas['facebook'])) {
+        	$this->_facebook->mergeMetas($this->metas['facebook']);
+        }
+        $this->_twitter = new Twitter();
+	    if(isset($this->metas['twitter'])) {
+		    $this->_twitter->mergeMetas($this->metas['twitter']);
+	    }
+	    $this->_site = new Site();
+	    if(isset($this->metas['site'])) {
+		    $this->_site->mergeMetas($this->metas['site']);
+	    }
     }
 
     public function set($metas = [])
@@ -30,11 +44,13 @@ class SeoTag extends Component
 
             switch($section) {
                 case 'facebook':
-                    $this->facebook->mergeMetas($values);
+                    $this->_facebook->mergeMetas($values);
                     break;
                 case 'twitter':
+	                $this->_twitter->mergeMetas($values);
                     break;
                 case 'site':
+	                $this->_site->mergeMetas($values);
                     break;
             }
 
@@ -42,7 +58,9 @@ class SeoTag extends Component
     }
 
     public function render(){
-        $this->facebook->render();
+        $this->_facebook->render();
+	    $this->_twitter->render();
+	    $this->_site->render();
     }
 
     public function setAndRender($metas){
