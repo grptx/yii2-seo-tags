@@ -44,11 +44,16 @@ to the require section of your `composer.json` file and execute `php composer.ph
 /** @var \grptx\SEO\SeoTag $seotag */
 $seotag = Yii::$app->seotag;
 $seotag->setAndRender([
-   'facebook'=>[
-           'og:title'=><open graph title>
-           //...
+   'facebook' => [
+           'og:title' => <open graph title>
+        // ...
    ],
-   // ...
+   'twitter' => [
+        // ...
+   ],
+   'site' => [
+        // ...
+   ]   
 ]);
 ````
 
