@@ -11,13 +11,10 @@ namespace grptx\SEO;
 
 abstract class AbstractSeo
 {
-    public function set($metas)
-    {
-        foreach ($metas as $property => $content) {
-            if (property_exists($this, $property)) {
-                $this->$property = $content;
-            }
-        }
+    protected $metas = [];
+
+    public function mergeMetas($metas){
+    	$this->metas = array_merge($this->metas,$metas);
     }
 
     public function render(){}

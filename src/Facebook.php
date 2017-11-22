@@ -9,10 +9,23 @@
 namespace grptx\SEO;
 
 
+use Yii;
+use yii\web\View;
+
 class Facebook extends AbstractSeo
 {
+	public $metas = [
+		'og:locale'=>'',
+		'og:type'=>'',
+		'og:title'=>'',
+	];
+
     public function render()
     {
-        // TODO: Implement render() method.
+	    Yii::$app->view->on(View::EVENT_BEGIN_PAGE, function(){
+			foreach ($this->metas as $key=>$value) {
+				Yii::$app->controller->view->registerMetaTag(['property'=>$key,'content'=>$value],$key);
+			}
+	    });
     }
 }
