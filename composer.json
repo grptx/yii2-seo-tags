@@ -17,9 +17,6 @@
   "require": {
     "yiisoft/yii2": "^2"
   },
-  "require-dev": {
-    "yiisoft/yii2-faker": "*"
-  },
   "minimum-stability": "dev",
   "autoload": {
     "psr-4": {
