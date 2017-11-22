@@ -1,4 +1,8 @@
 # yii2-seo-tags
+[![Latest Stable Version](https://poser.pugx.org/grptx/yii2-seo-tags/v/stable)](https://packagist.org/packages/grptx/yii2-seo-tags)
+[![Total Downloads](https://poser.pugx.org/grptx/yii2-seo-tags/downloads)](https://packagist.org/packages/grptx/yii2-seo-tags)
+[![Latest Unstable Version](https://poser.pugx.org/grptx/yii2-seo-tags/v/unstable)](https://packagist.org/packages/grptx/yii2-seo-tags)
+[![License](https://poser.pugx.org/grptx/yii2-seo-tags/license)](https://packagist.org/packages/grptx/yii2-seo-tags)
 
 ## Installation
 
