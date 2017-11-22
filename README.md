@@ -24,7 +24,7 @@ to the require section of your `composer.json` file and execute `php composer.ph
         // you can add some global tag here (optional)
         'metas'=>[
             'twitter'=>[
-                'twitter:creator'=>'@vlmoutlet'
+                'twitter:creator'=>'@grptx'
                 // ...
             ]
             // ...
