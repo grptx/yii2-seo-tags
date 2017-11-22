@@ -11,8 +11,7 @@
   "keywords": [
     "yii2",
     "yii2-components",
-    "seo",
-    "php7"
+    "seo"
   ],
   "description": "Yii2 Component to render some seo tags",
   "require": {
