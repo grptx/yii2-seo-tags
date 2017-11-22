@@ -67,9 +67,9 @@ $seotag->setAndRender([
 * og:image:height     
 
 ### Twitter Card
-* twitter:card'    
-* twitter:creator' 
-* twitter:site'    
+* twitter:card    
+* twitter:creator
+* twitter:site  
 
 ### Site
 * description
