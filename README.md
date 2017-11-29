@@ -77,6 +77,22 @@ $seotag->setAndRender([
 * twitter:card    
 * twitter:creator
 * twitter:site  
+* twitter:title                      
+* twitter:description                
+* twitter:image                      
+* twitter:image:alt                  
+* twitter:player                     
+* twitter:player:stream              
+* twitter:player:stream:content_type 
+* twitter:player:width               
+* twitter:player:height              
+* twitter:app:id:iphone              
+* twitter:app:id:ipad                
+* twitter:app:id:googleplay          
+* twitter:app:url:iphone             
+* twitter:app:url:ipad               
+* twitter:app:country                
+* twitter:app:url:googleplay         
 
 ### Site
 * description
