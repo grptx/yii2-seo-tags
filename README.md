@@ -45,7 +45,7 @@ to the require section of your `composer.json` file and execute `php composer.ph
 $seotag = Yii::$app->seotag;
 $seotag->setAndRender([
    'facebook' => [
-           'og:title' => <open graph title>
+           'og:title' => '<open graph title>'
         // ...
    ],
    'twitter' => [
@@ -69,7 +69,9 @@ $seotag->setAndRender([
 * og:image            
 * og:image:secure_url 
 * og:image:width      
-* og:image:height     
+* og:image:height
+* og:image:alt
+* fb:app_id     
 
 ### Twitter Card
 * twitter:card    

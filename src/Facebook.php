@@ -25,6 +25,8 @@ class Facebook extends AbstractSeo {
 		'og:image:secure_url' => '',
 		'og:image:width'      => '',
 		'og:image:height'     => '',
+		'og:image:alt'        => '',
+		'fb:app_id'           => '',
 	];
 
 	public function render() {
@@ -38,7 +40,7 @@ class Facebook extends AbstractSeo {
 			$this->metas['og:url'] = Yii::$app->request->absoluteUrl;
 		}
 		if ( empty( $this->metas['og:locale'] ) ) {
-			$this->metas['og:locale'] =  str_replace('-','_',Yii::$app->language);
+			$this->metas['og:locale'] = str_replace( '-', '_', Yii::$app->language );
 		}
 		Yii::$app->view->on( View::EVENT_BEGIN_PAGE, function () {
 			foreach ( $this->metas as $key => $value ) {
