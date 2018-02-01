@@ -51,9 +51,9 @@ class Facebook extends AbstractSeo {
 				}
 
 				if ( is_array( $value ) ) {
-					foreach ( $value as $val ) {
-						$key_str = str_replace( 'array', 'og', $key );
-						Yii::$app->controller->view->registerMetaTag( [ 'property' => $key_str, 'content' => $val ], $key );
+					foreach ( $value as $i => $val ) {
+						$key = str_replace( 'array', 'og', $key );
+						Yii::$app->controller->view->registerMetaTag( [ 'property' => $key, 'content' => $val ], $key.$i );
 					}
 				} else {
 					Yii::$app->controller->view->registerMetaTag( [ 'property' => $key, 'content' => $value ], $key );
