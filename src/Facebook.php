@@ -14,19 +14,21 @@ use yii\web\View;
 
 class Facebook extends AbstractSeo {
 	public $metas = [
-		'og:locale'           => '',
-		'og:type'             => '',
-		'og:title'            => '',
-		'og:description'      => '',
-		'og:url'              => '',
-		'og:site_name'        => '',
-		'og:updated_time'     => '',
-		'og:image'            => '',
-		'og:image:secure_url' => '',
-		'og:image:width'      => '',
-		'og:image:height'     => '',
-		'og:image:alt'        => '',
-		'fb:app_id'           => '',
+		'og:locale'              => '',
+		'og:type'                => '',
+		'og:title'               => '',
+		'og:description'         => '',
+		'og:url'                 => '',
+		'og:site_name'           => '',
+		'og:updated_time'        => '',
+		'og:image'               => '',
+		'og:image:secure_url'    => '',
+		'og:image:width'         => '',
+		'og:image:height'        => '',
+		'og:image:alt'           => '',
+		'fb:app_id'              => '',
+		'array:image'            => [],
+		'array:image_secure_url' => [],
 	];
 
 	public function render() {
@@ -47,7 +49,17 @@ class Facebook extends AbstractSeo {
 				if ( empty( $value ) ) {
 					continue;
 				}
-				Yii::$app->controller->view->registerMetaTag( [ 'property' => $key, 'content' => $value ], $key );
+
+				if ( is_array( $value ) ) {
+					foreach ( $value as $val ) {
+						$key = str_replace( 'array', 'og', $key );
+						Yii::$app->controller->view->registerMetaTag( [ 'property' => $key, 'content' => $val ], $key );
+					}
+				} else {
+					Yii::$app->controller->view->registerMetaTag( [ 'property' => $key, 'content' => $value ], $key );
+				}
+
+
 			}
 		} );
 	}
